@@ -15,7 +15,12 @@ public class ArrayTasks {
         //task9();
         //task10();
         //task19();
-        task20();
+        //task20();
+        //task23();
+        //task32();
+        //task33();
+        //task35();
+        //task38();
     }
 
     //1. Заполнить массив нулями, кроме первого и последнего элементов, которые должны быть равны единице.
@@ -123,4 +128,70 @@ public class ArrayTasks {
         }
         System.out.println(countOfEvenNumbers);
     }
+
+    //23. Найдите сумму и произведение элементов массива.
+    public static void task23() {
+        int sum = 0;
+        int[] array = new int[]{5, 4, 3, 2, 6, 1};
+        int product = 1;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+            product *= array[i];
+        }
+        System.out.println("Сумма элементов массива равна " + sum);
+        System.out.println("Произведение элементов массива равно " + product);
+    }
+
+    //32. Найти наибольший элемент массива.
+    public static void task32() {
+        int[] array = new int[]{2, 60, 3, 1, 8, 12};
+        int maxElement = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > maxElement) {
+                maxElement = array[i];
+            }
+        }
+        System.out.println(maxElement);
+    }
+
+    //33. Найдите сумму наибольшего и наименьшего элементов массива.
+    public static void task33() {
+        int[] array = new int[]{20, 65, 3, 655, 33};
+        int maxElement = 0;
+        int minElement = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > maxElement) {
+                maxElement = array[i];
+            }
+            if (array[i] < minElement) {
+                minElement = array[i];
+            }
+        }
+        System.out.println(maxElement + minElement);
+    }
+
+    //35. Найдите наименьший четный элемент массива.
+    public static void task35() {
+        int[] array = new int[]{20, 65, 3, 655, 33, 6, 43, 1, 80};
+        int minElement = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if ((array[i] < minElement) & (array[i] % 2 == 0)) {
+                minElement = array[i];
+            }
+        }
+        System.out.println(minElement);
+    }
+
+    //38. Дан массив. Найдите два соседних элемента, сумма которых минимальна.
+    public static void task38() {
+        int[] array = new int[]{20, 65, 3, 655, 33, 6, 43, 1, 80};
+        int sum = array[0] + array[1];
+        for (int i = 1; i < array.length; i++) {
+            if ((array[i - 1] + array[i]) < sum) {
+                sum = array[i] + array[i - 1];
+            }
+        }
+        System.out.println(sum);
+    }
+
 }
