@@ -21,6 +21,9 @@ public class ArrayTasks {
         //task33();
         //task35();
         //task38();
+        //bubbleSort();
+        //bubbleSortWithCycleFor();
+        task47();
     }
 
     //1. Заполнить массив нулями, кроме первого и последнего элементов, которые должны быть равны единице.
@@ -157,7 +160,7 @@ public class ArrayTasks {
     //33. Найдите сумму наибольшего и наименьшего элементов массива.
     public static void task33() {
         int[] array = new int[]{20, 65, 3, 655, 33};
-        int maxElement = 0;
+        int maxElement = array[0];
         int minElement = array[0];
         for (int i = 0; i < array.length; i++) {
             if (array[i] > maxElement) {
@@ -194,4 +197,73 @@ public class ArrayTasks {
         System.out.println(sum);
     }
 
+    //Bubble sort
+    public static void bubbleSort() {
+        int[] array = new int[]{207, 65, 3, 655, 33, 6, 43, 1, 80};
+        boolean needIteration = true;
+        while (needIteration) {
+            needIteration = false;
+            int k = array.length;
+            for (int i = 1; i < k; i++) {
+                if (array[i] < array[i - 1]) {
+                    int tmp = array[i];
+                    array[i] = array[i - 1];
+                    array[i - 1] = tmp;
+                    needIteration = true;
+                }
+            }
+            k--;
+        }
+        System.out.println(Arrays.toString(array));
+    }
+
+    //Bubble sort with cycle for
+    public static void bubbleSortWithCycleFor() {
+        int[] array = new int[]{207, 65, 3, 655, 33, 6, 43, 1, 80};
+        int k = array.length;
+        for (int j = 0; j < array.length; j++) {
+            for (int i = 1; i < k; i++) {
+                if (array[i] < array[i - 1]) {
+                    int tmp = array[i];
+                    array[i] = array[i - 1];
+                    array[i - 1] = tmp;
+                }
+            }
+            k--;
+        }
+        System.out.println(Arrays.toString(array));
+    }
+
+    //47. В данном массиве найти максимальное количество одинаковых элементов.
+    public static void task47() {
+        int[] array = new int[]{69, 3, 4, 6, 7, 5, 69, 3, 69, 54, 3, 69, 69, 69, 1, 3, 1, 69, 31, 4};
+        int k = array.length;
+        int maximumRepeatable = 0;
+        int countOfRepeateOfCurrentElement = 1;
+        int element = 0;
+        for (int j = 0; j < array.length; j++) {
+            for (int i = 1; i < k; i++) {
+                if (array[i] < array[i - 1]) {
+                    int tmp = array[i];
+                    array[i] = array[i - 1];
+                    array[i - 1] = tmp;
+                }
+            }
+            k--;
+        }
+        System.out.println(Arrays.toString(array));
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] == array[i + 1]) {
+                countOfRepeateOfCurrentElement += 1;
+                if (countOfRepeateOfCurrentElement > maximumRepeatable) {
+                    maximumRepeatable = countOfRepeateOfCurrentElement;
+                    element = array[i];
+                }
+            } else  {
+                countOfRepeateOfCurrentElement = 1;
+            }
+        }
+        System.out.println("Элемент " + element + " встречается " + maximumRepeatable + " раз");
+    }
 }
+
