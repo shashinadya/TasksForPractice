@@ -1,7 +1,5 @@
 package car;
 
-import java.util.Arrays;
-
 public class Car {
     private boolean isAWD;
     private String modelOfCar;
