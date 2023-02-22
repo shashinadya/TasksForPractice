@@ -3,7 +3,7 @@
 // Добавить возможность вывода фамилий и
 // номеров групп студентов, имеющих оценки, равные только 4 или 5.
 
-package Students;
+package students;
 
 import java.util.Arrays;
 

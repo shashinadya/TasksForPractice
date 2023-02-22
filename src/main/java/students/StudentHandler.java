@@ -1,6 +1,4 @@
-package Students;
-
-import java.util.Arrays;
+package students;
 
 public class StudentHandler {
     public static void main(String[] args) {
@@ -18,8 +16,6 @@ public class StudentHandler {
         students[9] = new Student("Morev", "I. K.", 6, new double[]{3, 4, 4, 4, 4});
 
         printStudentsWithGoodGrades(students);
-
-
     }
 
     public static void printStudentsWithGoodGrades(Student[] students) {
@@ -37,7 +33,5 @@ public class StudentHandler {
             }
         }
     }
-
-
 }
 

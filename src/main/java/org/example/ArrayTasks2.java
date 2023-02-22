@@ -8,6 +8,7 @@ import java.lang.Number;
 public class ArrayTasks2 {
     public static void main(String[] args) {
         //task56();
+        task36();
     }
 
     //56. В массиве заменить все числа, большие данного числа, на среднее арифметическое всех чисел массива.
@@ -23,5 +24,15 @@ public class ArrayTasks2 {
         System.out.println(Arrays.toString(array));
     }
 
-
+    //36. Среди элементов с нечетными номерами найдите наибольший элемент массива, который делится на 3.
+    public static void task36() {
+        int[] array = new int[] {120, 12, 18, 1, 6, 5, 30, 13};
+        int maxElementWhichDevidedByThree = 0;
+        for (int i = 0; i < array.length; i++) {
+           if (i % 2 != 0 & array[i] % 3 == 0) {
+               maxElementWhichDevidedByThree = array[i];
+           }
+        }
+        System.out.println(maxElementWhichDevidedByThree);
+    }
 }
